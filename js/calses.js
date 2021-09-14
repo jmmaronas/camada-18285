@@ -23,7 +23,7 @@ class Productos{
                         </div>
                         <div class="row">    
                             <ul class="list-group list-group-horizontal m-2 ">
-                                <li id="cantidadMenos${e.id}" class="list-group-item btn bg-success col-3 text-white  restar"> <i class="fas fa-minus"></i> </li>
+                                <li id="cantidadMenos${e.id}" class="list-group-item btn bg-success col-3 text-white restar"><i class="fas fa-minus"></i></li>
                                 <li id="cantidad${e.id}" class="list-group-item col-6  fw-bolder">${e.cantidad}</li>
                                 <li id="cantidadMas${e.id}" class="list-group-item btn bg-success col-3 text-white sumar"> <i class="fas fa-plus"></i> </li>
                             </ul>
