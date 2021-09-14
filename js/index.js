@@ -17,11 +17,20 @@ let misDatos=$.getJSON("productos.json", function(req,res){
   }  
 });
 
-
+//Burbuja carrito cantidad productos
 const burbuja = ()=>{
     const burbuja=document.getElementById("boubble");
     burbuja.innerHTML=localStorage.getItem("carrito") ? (JSON.parse(localStorage.getItem("carrito"))).length : "0";
 }
+// Filtro por tipo producto
+$("#filtroPc").on("click", ()=>{
+  let productosPc=new Productos(listaProductos.productos.filter(e => e.name == "Pc"));
+  productosPc.render("#contenedor");  
+});
+$("#filtroNote").on("click", ()=>{
+  let productosNote=new Productos(listaProductos.productos.filter(e => e.name == "Note"));
+  productosNote.render("#contenedor");  
+});
 
 //  agregar productos al carrito
 $("#contenedor").on("click", e=>{
