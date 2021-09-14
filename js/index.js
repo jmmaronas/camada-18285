@@ -9,13 +9,25 @@ let listaProductos;
 const carrito= new Carrito();
 const url="C:/Users/User/Google Drive/Curso - copia-20210907T144133Z-001/productos.json"
 
-let misDatos=$.getJSON("productos.json", function(req,res){
+$.getJSON("productos.json", function(req,res){
   if(res === "success"){
     let misDatos= req;
     listaProductos = new Productos(misDatos); 
     listaProductos.render("#contenedor");
   }  
 });
+
+
+const APIURL = "https://api-dolar-argentina.herokuapp.com/api/dolaroficial";
+$.ajax({
+    method: "GET",
+    url: APIURL,
+    success: function(data) {
+        $("#dolar").html(`<p class="text-primary">Dolar compra:$ <b>${data.compra}</b>  Dolar venta:$ <b>${data.venta}</b></p>`);          
+        dolarVenta = data.venta;
+    }
+});
+
 
 //Burbuja carrito cantidad productos
 const burbuja = ()=>{
@@ -206,25 +218,4 @@ $("#p1").css("color", "red")
 
 
 
-    // const calseProductos = $(".agregar").on("mouseover",e=>{ 
-    //     // let width= $(".agregar").width();
-    //     // let height= $(".agregar").height();
-        
-    //     // console.log(width,height);
-
-    //     $(".agregar").animate({ 
-    //         left:'250px',
-    //         opacity:'0.5',
-    //         height:'+=15px',
-    //         width: '+=25px'}, //1er parámetro propiedades
-    //         3000,            //2do parámetro duración 
-    //         function(){        //3er parámetro callback
-    //             $(".agregar").animate({ 
-    //                 left:'250px',
-    //                 opacity:'0.5',
-    //                 height:'-=15px',
-    //                 width: '-=25px'}, //1er parámetro propiedades
-    //                 3000);          //2do
-    //         });
-    // });
-    //});
+    
