@@ -1,9 +1,10 @@
 $(document).ready( ()=>{
     Swal.fire('Pagina Lista');
     burbuja();    
+    console.log(dolarVenta);
     //listaProductos.render("#contenedor");
 });
-
+let dolarVenta;
 const contenedor = document.getElementById("contenedor");
 let listaProductos;
 const carrito= new Carrito();
