@@ -16,23 +16,42 @@
     </div>
     
     <div class="container">
-        <div class="row justify-content-beteween" id="contenedorCarrito">
+        <div class="d-flex flex-wrap justify-content-around" id="contenedorCarrito">
+        </div>
+        <div class="d-flex justify-content-around my-5 border border-1 py-3">
+            <div id="vaciarCarrito">            
+            </div>
+            <div>
+                <button id="confirmBuy" class="btn btn-primary px-5">Confirmar compra</button>
+            </div>
+            <div id="contenedorCarritoTotal">            
+            </div>
         </div>
     </div>
-
-    <div id="resultado"></div>
-
-    <form action="#" method="GET" id="form">
-        <input type="text" name="name" value="juan">
-        <input type="number" name="precio" id="total">
-        <input type="submit" value="enviar">
-        <Select id="nombre">
-            <option value="1">dolar</option>
-            <option value="peso">peso</option>
-            <option value="bla">bla</option>
-        </Select>
-    </form>
-
+    <!-- Formulario confirmacion compra-->
+    <div id="formBuyConfirm" class="container mt-5">
+        <form class="d-flex flex-column fw-bold container col-6" action="#" method="GET" id="form">
+            <div class="mb-3">
+                <label class="form-label" for="nombre">Nombre y Apellido</label>
+                <input class="form-control" type="text" id="nombre" value="juan">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="mail">Email</label>
+                <input class="form-control" type="email" name="" id="mail">
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="moneda">Tipo de moneda</label>
+                <Select class="form-select" id="moneda">
+                    <option value="1">dolar</option>
+                    <option value="peso">peso</option>
+                    <option value="bla">bla</option>
+                </Select>
+            </div>
+            <div class="mb-3 row">            
+                <input class="form-contol btn btn-primary" type="submit" value="enviar">
+            </div>        
+        </form>
+    </div>
     
         
      <!--JQUERY 3.6-->

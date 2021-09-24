@@ -89,9 +89,24 @@ class Carrito{
         localStorage.clear();
         location.reload()
     }
+    sumarPrecio(){
+        this.total=0; 
+        this.carrito.forEach(element  => this.total  += (element.precio*element.cantidad));
+        console.log(this.total);
+    }
+
     removeElementWithAnimation(id){
         console.log("card"+id);
         //$("#card"+id).remove();
         $("#card"+id).fadeOut(3000);
+    }
+}
+
+class Compra{
+    constructor(nombre, mail, moneda, carrito){
+        this.nombre=nombre;
+        this.mail=mail;
+        this.moneda=moneda;
+        this.carrito=carrito;
     }
 }
